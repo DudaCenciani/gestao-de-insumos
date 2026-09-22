@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel de Requisições - Gestão de Insumos MR</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="app-header">
+    <a href="painel.html" class="brand-title">
+      📦 Gestão de Insumos MR
+    </a>
+    <nav class="nav-links">
+      <a href="painel.html" class="nav-link active">Requisições</a>
+      <a href="nova-requisicao.html" class="nav-link">Nova Requisição</a>
+      <a href="materiais.html" class="nav-link" id="nav-materiais">Materiais</a>
+    </nav>
+    <div class="user-profile">
+      <span id="user-email" style="font-weight: 500; font-size: 0.85rem;"></span>
+      <span id="user-role" class="user-badge"></span>
+      <button id="btn-logout" class="btn btn-secondary btn-sm">Sair</button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <h1 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700;">Painel de Requisições</h1>
+        <p style="color: var(--on-surface-variant); font-size: 0.85rem;" id="painel-subtitle">Acompanhe suas solicitações de materiais</p>
+      </div>
+      <a href="nova-requisicao.html" class="btn btn-primary">
+        + Nova Requisição
+      </a>
+    </div>
+
+    <!-- Filtros para Admin -->
+    <div id="container-filtros" class="card" style="display: none; padding: 1rem; margin-bottom: 1rem;">
+      <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+        <span style="font-weight: 600; font-size: 0.85rem; color: var(--tertiary);">Filtrar por Status:</span>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;" id="filter-buttons">
+          <button class="btn btn-secondary btn-sm filter-btn active" data-status="todas">Todas</button>
+          <button class="btn btn-secondary btn-sm filter-btn" data-status="pendente">Pendentes</button>
+          <button class="btn btn-secondary btn-sm filter-btn" data-status="aprovada">Aprovadas</button>
+          <button class="btn btn-secondary btn-sm filter-btn" data-status="entregue">Entregues</button>
+          <button class="btn btn-secondary btn-sm filter-btn" data-status="recusada">Recusadas</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="padding: 0;">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Material</th>
+              <th>Quantidade</th>
+              <th id="th-solicitante" style="display: none;">Solicitante</th>
+              <th>Status</th>
+              <th>Data de Criação</th>
+              <th id="th-acoes" style="text-align: right; display: none;">Ações</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-requisicoes">
+            <tr>
+              <td colspan="6" style="text-align: center; padding: 2rem;">Carregando requisições...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="js/painel.js"></script>
+</body>
+</html>

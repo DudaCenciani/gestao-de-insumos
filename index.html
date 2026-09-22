@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Gestão de Insumos MR</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="login-card">
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <h1 class="brand-title" style="justify-content: center; font-size: 1.5rem;">
+          📦 Gestão de Insumos MR
+        </h1>
+        <p style="color: var(--on-surface-variant); font-size: 0.85rem; margin-top: 0.25rem;">
+          Acesse sua conta para solicitar ou gerenciar materiais
+        </p>
+      </div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label class="form-label" for="email">E-mail</label>
+          <input type="email" id="email" class="form-control" placeholder="seu.email@empresa.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Senha</label>
+          <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" id="btn-submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+          Entrar
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="js/login.js"></script>
+</body>
+</html>
