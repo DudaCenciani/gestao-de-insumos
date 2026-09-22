@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Gestão de Insumos MR</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Orbitron:wght@600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#5b3f44", "surface-bright": "#fff7fc", "surface-variant": "#eeddf2", "tertiary-fixed": "#f3daff", "background": "#fff7fc", "on-secondary-fixed": "#37003a", "primary": "#b7004d", "tertiary-fixed-dim": "#e0b8f8", "on-error-container": "#93000a", "on-tertiary-fixed-variant": "#593970", "error": "#ba1a1a", "on-background": "#221827", "secondary-fixed-dim": "#ffaaf7", "on-error": "#ffffff", "on-secondary-container": "#7d227e", "on-secondary": "#ffffff", "surface-dim": "#e6d4ea", "on-primary-container": "#fffbff", "secondary-fixed": "#ffd6f7", "surface-tint": "#bc004f", "on-primary-fixed-variant": "#90003b", "on-tertiary": "#ffffff", "surface-container-highest": "#eeddf2", "primary-fixed-dim": "#ffb1bf", "surface-container": "#fae8fe", "on-primary-fixed": "#3f0016", "inverse-surface": "#372c3c", "secondary": "#943894", "tertiary": "#704e87", "on-surface": "#221827", "primary-container": "#e01e64", "outline-variant": "#e3bdc3", "primary-fixed": "#ffd9de", "inverse-on-surface": "#fcebff", "surface-container-high": "#f4e2f8", "on-secondary-fixed-variant": "#781c7a", "tertiary-container": "#8a67a1", "surface-container-low": "#feefff", "surface-container-lowest": "#ffffff", "inverse-primary": "#ffb1bf", "on-tertiary-container": "#fffbff", "secondary-container": "#ff96f8", "error-container": "#ffdad6", "outline": "#8f6f74", "on-tertiary-fixed": "#2b0b41", "surface": "#fff7fc", "on-primary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "1rem", "margin-tablet": "1.5rem", "gutter-desktop": "1.5rem", "margin-desktop": "2rem", "space-xl": "2.5rem", "space-md": "1rem", "gutter": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-lg": "1.5rem" }, "fontFamily": { "body-lg": [ "Inter" ], "display-lg": [ "Space Grotesk" ], "body-sm": [ "Inter" ], "headline-md": [ "Space Grotesk" ], "headline-sm": [ "Space Grotesk" ], "body-md": [ "Inter" ], "display-lg-mobile": [ "Space Grotesk" ], "headline-lg": [ "Space Grotesk" ], "label-sm": [ "Inter" ], "label-md": [ "Inter" ] }, "fontSize": { "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "display-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "headline-md": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "headline-sm": [ "16px", { "lineHeight": "24px", "fontWeight": "600" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "display-lg-mobile": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-lg": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" } ], "label-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" } ] } }, }, }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm group" data-path="painel" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1Up0-aoBbSH_KxitIxtYlbfXgYL0a2ti7cCTig3sdiqJqOk2CPzZKLkOKESPF5ozSMZodRy_m_Xt0HkmIUkOHAuGzQ-6hOrNTVSi8uCKAPqq-Ldv0CLxQESDzsllZ8u6nUYUeD7PUAQyt9a5j27oq6al3J6S5KkSW0x0Yn1EW4VtDt0-roHWeUo0SB79kfeJmW0g2TMo7WDLUOPERA5Uu3e61D_CM1D4p39gz2PFdu5YFU5JstQfg7LFilBTRRofXznigMttkYH"/><span class="font-bold text-headline-sm text-primary tracking-wider uppercase whitespace-nowrap" style="font-family: 'Orbitron', sans-serif;">Gestão de Insumos MR</span></a><nav class="hidden md:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm"><a aria-current="page" class="px-space-md py-space-xs transition-all bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm" data-path="painel" href="#">Painel</a><a class="px-space-md py-space-xs text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all rounded-lg" data-path="nova-requisicao" href="#">Nova Requisição</a><a class="inline-flex items-center gap-space-xs px-space-md py-space-xs text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all rounded-lg" data-path="materiais" href="#"><span>Materiais</span><span class="px-space-xs py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm tracking-wide uppercase">Admin</span></a></nav></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Juliana Prado</span><span class="font-label-sm text-label-sm text-tertiary">Administradora</span></div><div class="h-6 w-px bg-outline-variant/40 hidden sm:block"></div><a class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg text-tertiary hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="login" href="#"><span class="material-symbols-outlined text-[18px]">logout</span><span class="font-label-md text-label-md font-medium hidden sm:inline">Sair</span></a></div></div></header><main class="w-full pt-16 min-h-screen bg-surface"><div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-lg space-y-space-lg">
+<!-- Top Context & Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-secondary-fixed/30 blur-2xl pointer-events-none"></div>
+<div class="space-y-space-xs relative z-10">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm uppercase tracking-wider font-semibold">Módulo de Suprimentos</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Visão Administrativa Ativa</span>
+</div>
+<h1 class="text-display-lg font-display-lg text-secondary tracking-tight" style="font-family: 'Orbitron', sans-serif;">Painel de Requisições</h1>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-2xl">Acompanhamento de requisições e histórico de retiradas de materiais.</p>
+</div>
+<div class="flex items-center gap-space-sm relative z-10 shrink-0">
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-primary text-on-primary font-headline-sm text-headline-sm shadow-md hover:bg-primary-container active:scale-[0.98] transition-all" href="nova-requisicao.html">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Nova Requisição</span>
+</a>
+</div>
+</div>
+<!-- Governance Rule Alert & Quick Insight Grid -->
+<!-- Filters, Tabs & Search Toolbar -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Status Tabs / Pills -->
+<div class="flex flex-wrap items-center gap-space-xs" id="status-filters">
+<button class="filter-btn px-space-md py-space-xs rounded-full bg-secondary text-on-secondary font-label-md text-label-md font-semibold transition-all" data-filter="all">Todas (18)</button>
+<button class="filter-btn px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-all" data-filter="pendente">Pendentes (4)</button>
+<button class="filter-btn px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-all" data-filter="aprovada">Aprovadas (3)</button>
+<button class="filter-btn px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-all" data-filter="entregue">Entregues (9)</button>
+<button class="filter-btn px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-all" data-filter="recusada">Recusadas (2)</button>
+</div>
+<!-- Search Bar & Switch Admin/Solicitante -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm">
+<div class="relative min-w-[260px]">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-tertiary text-[18px]">search</span>
+<input class="w-full h-10 pl-9 pr-space-md bg-surface rounded-lg text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all" id="table-search" placeholder="Buscar material ou solicitante..." type="text"/>
+</div>
+<button class="h-10 px-space-sm rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-variant font-label-md text-label-md flex items-center justify-center gap-space-xs transition-colors shrink-0" id="view-toggle">
+<span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+<span id="view-toggle-text">Modo: Solicitante</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Responsive Requisitions Table Container -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left whitespace-nowrap">
+<thead class="bg-surface-container-low text-tertiary font-label-md text-label-md uppercase tracking-wider">
+<tr>
+<th class="py-space-sm px-space-md" scope="col">Material</th>
+<th class="py-space-sm px-space-md" scope="col">Quantidade</th>
+<th class="py-space-sm px-space-md col-solicitante" scope="col">Solicitante</th>
+<th class="py-space-sm px-space-md" scope="col">Data da Requisição</th>
+<th class="py-space-sm px-space-md" scope="col">Status</th>
+<th class="py-space-sm px-space-md text-right col-actions" scope="col">Ações do Administrador</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-md text-body-md" id="requisitions-tbody">
+<!-- Row 1: Pendente -->
+<tr class="hover:bg-surface-container-low/50 transition-colors req-row" data-search="papel sulfite a4 75g mariana silva mariana.silva@empresa.com" data-status="pendente">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Papel Sulfite A4 75g</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Cód: SUP-0921 • Almoxarifado Central</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-semibold text-on-surface">10 cx</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm block">50 pacotes total</span>
+</td>
+<td class="py-space-md px-space-md col-solicitante">
+<div class="font-headline-sm text-headline-sm text-on-surface">Mariana Silva</div>
+<div class="font-body-sm text-body-sm text-tertiary">mariana.silva@empresa.com</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface">24/10/2023</div>
+<div class="font-body-sm text-body-sm text-tertiary">às 14:32</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center px-space-sm py-0.5 rounded-full text-label-sm font-label-sm font-semibold tracking-wide uppercase bg-[#FEF3C7] text-[#92400E]">
+                  Pendente
+                </span>
+</td>
+<td class="py-space-md px-space-md text-right col-actions">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-[#E0F2FE] hover:bg-[#BAE6FD] text-[#075985] font-label-md text-label-md font-semibold transition-all inline-flex items-center gap-1" onclick="approveReq(this)">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Aprovar</span>
+</button>
+<button class="px-space-sm py-1 rounded bg-[#FEE2E2] hover:bg-[#FECACA] text-[#991B1B] font-label-md text-label-md font-semibold transition-all inline-flex items-center gap-1" onclick="rejectReq(this)">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>Recusar</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Aprovada -->
+<tr class="hover:bg-surface-container-low/50 transition-colors req-row" data-search="frasco alcool em gel 500ml carla dias carla.dias@empresa.com" data-status="aprovada">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">sanitizer</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Frasco Álcool em Gel 500ml</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Cód: HIG-4412 • Armário Sanitário</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-semibold text-on-surface">5 un</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm block">Dispenser pump</span>
+</td>
+<td class="py-space-md px-space-md col-solicitante">
+<div class="font-headline-sm text-headline-sm text-on-surface">Carla Dias</div>
+<div class="font-body-sm text-body-sm text-tertiary">carla.dias@empresa.com</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface">24/10/2023</div>
+<div class="font-body-sm text-body-sm text-tertiary">às 13:15</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center px-space-sm py-0.5 rounded-full text-label-sm font-label-sm font-semibold tracking-wide uppercase bg-[#E0F2FE] text-[#075985]">
+                  Aprovada
+                </span>
+</td>
+<td class="py-space-md px-space-md text-right col-actions">
+<button class="px-space-md py-1 rounded bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-on-secondary-container transition-all shadow-sm inline-flex items-center gap-1.5" onclick="deliverReq(this)" title="Executa a RPC entregar_requisicao e atualiza o saldo atômico do material">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+<span>Registrar entrega</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Pendente -->
+<tr class="hover:bg-surface-container-low/50 transition-colors req-row" data-search="luvas descartaveis latex p roberto leal roberto.leal@empresa.com" data-status="pendente">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">medication</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Luvas descartáveis látex P</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Cód: EPI-1109 • Bloco Operacional</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-semibold text-on-surface">20 pct</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm block">100 un por pct</span>
+</td>
+<td class="py-space-md px-space-md col-solicitante">
+<div class="font-headline-sm text-headline-sm text-on-surface">Roberto Leal</div>
+<div class="font-body-sm text-body-sm text-tertiary">roberto.leal@empresa.com</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface">24/10/2023</div>
+<div class="font-body-sm text-body-sm text-tertiary">às 11:40</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center px-space-sm py-0.5 rounded-full text-label-sm font-label-sm font-semibold tracking-wide uppercase bg-[#FEF3C7] text-[#92400E]">
+                  Pendente
+                </span>
+</td>
+<td class="py-space-md px-space-md text-right col-actions">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-[#E0F2FE] hover:bg-[#BAE6FD] text-[#075985] font-label-md text-label-md font-semibold transition-all inline-flex items-center gap-1" onclick="approveReq(this)">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Aprovar</span>
+</button>
+<button class="px-space-sm py-1 rounded bg-[#FEE2E2] hover:bg-[#FECACA] text-[#991B1B] font-label-md text-label-md font-semibold transition-all inline-flex items-center gap-1" onclick="rejectReq(this)">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>Recusar</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Entregue -->
+<tr class="hover:bg-surface-container-low/50 transition-colors req-row" data-search="caneta esferografica azul 0.7mm vanessa lins vanessa.lins@empresa.com" data-status="entregue">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[20px]">draw</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Caneta Esferográfica Azul 0.7mm</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Cód: ESC-0331 • Almoxarifado Central</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-semibold text-on-surface">8 cx</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm block">50 canetas/cx</span>
+</td>
+<td class="py-space-md px-space-md col-solicitante">
+<div class="font-headline-sm text-headline-sm text-on-surface">Vanessa Lins</div>
+<div class="font-body-sm text-body-sm text-tertiary">vanessa.lins@empresa.com</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface">24/10/2023</div>
+<div class="font-body-sm text-body-sm text-tertiary">às 10:05</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center px-space-sm py-0.5 rounded-full text-label-sm font-label-sm font-semibold tracking-wide uppercase bg-[#DCFCE7] text-[#166534]">
+                  Entregue
+                </span>
+</td>
+<td class="py-space-md px-space-md text-right col-actions">
+<div class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary bg-surface-container px-space-sm py-1 rounded">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span>Entregue em 24/10 às 16:00 por Admin</span>
+</div>
+</td>
+</tr>
+<!-- Row 5: Recusada -->
+<tr class="hover:bg-surface-container-low/50 transition-colors req-row" data-search="toner impressora hp m404 diego gomes diego.gomes@empresa.com" data-status="recusada">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">print</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Toner Impressora HP M404</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Cód: TI-8822 • CPD T.I.</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-semibold text-on-surface">3 un</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm block">Preto Alto Rendimento</span>
+</td>
+<td class="py-space-md px-space-md col-solicitante">
+<div class="font-headline-sm text-headline-sm text-on-surface">Diego Gomes</div>
+<div class="font-body-sm text-body-sm text-tertiary">diego.gomes@empresa.com</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface">23/10/2023</div>
+<div class="font-body-sm text-body-sm text-tertiary">às 17:12</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center px-space-sm py-0.5 rounded-full text-label-sm font-label-sm font-semibold tracking-wide uppercase bg-[#FEE2E2] text-[#991B1B]">
+                  Recusada
+                </span>
+</td>
+<td class="py-space-md px-space-md text-right col-actions">
+<div class="inline-flex items-center gap-1 font-label-sm text-label-sm text-error bg-error-container/40 px-space-sm py-1 rounded">
+<span class="material-symbols-outlined text-[14px]">cancel</span>
+<span>Recusada em 23/10 (Cota mensal excedida)</span>
+</div>
+</td>
+</tr>
+<!-- Row 6: Aprovada -->
+<tr class="hover:bg-surface-container-low/50 transition-colors req-row" data-search="pasta suspensa kraft marcelo soares marcelo.soares@empresa.com" data-status="aprovada">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">folder</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Pasta Suspensa Kraft</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Cód: ARQ-0199 • Almoxarifado Central</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-semibold text-on-surface">50 un</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm block">Com visor e etiqueta</span>
+</td>
+<td class="py-space-md px-space-md col-solicitante">
+<div class="font-headline-sm text-headline-sm text-on-surface">Marcelo Soares</div>
+<div class="font-body-sm text-body-sm text-tertiary">marcelo.soares@empresa.com</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface">23/10/2023</div>
+<div class="font-body-sm text-body-sm text-tertiary">às 15:40</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center px-space-sm py-0.5 rounded-full text-label-sm font-label-sm font-semibold tracking-wide uppercase bg-[#E0F2FE] text-[#075985]">
+                  Aprovada
+                </span>
+</td>
+<td class="py-space-md px-space-md text-right col-actions">
+<button class="px-space-md py-1 rounded bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-on-secondary-container transition-all shadow-sm inline-flex items-center gap-1.5" onclick="deliverReq(this)" title="Executa a RPC entregar_requisicao e atualiza o saldo atômico do material">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+<span>Registrar entrega</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+          Mostrando <span class="font-semibold text-on-surface">6</span> de <span class="font-semibold text-on-surface">18</span> requisições catalogadas
+        </div>
+<div class="flex items-center gap-space-xs">
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-tertiary hover:bg-surface flex items-center justify-center transition-all disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-space-sm py-1 rounded-md bg-primary text-on-primary font-label-sm text-label-sm font-semibold">1</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container flex items-center justify-center font-label-sm text-label-sm transition-all">2</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container flex items-center justify-center font-label-sm text-label-sm transition-all">3</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-tertiary hover:bg-surface flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Notification Toast System -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-space-sm p-space-md rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl max-w-md" id="toast-notification">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[24px]" id="toast-icon">task_alt</span>
+<div>
+<div class="font-headline-sm text-headline-sm font-semibold" id="toast-title">Ação Confirmada</div>
+<div class="font-body-sm text-body-sm text-inverse-on-surface/80" id="toast-msg">Procedimento executado com integridade no banco.</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Filter and Interactive Behavior
+  let activeStatus = 'all';
+  let isApplicantView = false;
+
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const searchInput = document.getElementById('table-search');
+  const rows = document.querySelectorAll('.req-row');
+  const viewToggleBtn = document.getElementById('view-toggle');
+  const viewToggleText = document.getElementById('view-toggle-text');
+  const solicitanteCols = document.querySelectorAll('.col-solicitante');
+  const actionCols = document.querySelectorAll('.col-actions');
+
+  function applyFilters() {
+    const term = searchInput.value.toLowerCase().trim();
+    rows.forEach(row => {
+      const statusMatch = activeStatus === 'all' || row.getAttribute('data-status') === activeStatus;
+      const searchMatch = !term || row.getAttribute('data-search').toLowerCase().includes(term);
+      if (statusMatch && searchMatch) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.className = 'filter-btn px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-all';
+      });
+      btn.className = 'filter-btn px-space-md py-space-xs rounded-full bg-secondary text-on-secondary font-label-md text-label-md font-semibold transition-all';
+      activeStatus = btn.getAttribute('data-filter');
+      applyFilters();
+    });
+  });
+
+  searchInput.addEventListener('input', applyFilters);
+
+  // Toggle View between Admin and Solicitante
+  viewToggleBtn.addEventListener('click', () => {
+    isApplicantView = !isApplicantView;
+    if (isApplicantView) {
+      viewToggleText.innerText = 'Modo: Administrador';
+      solicitanteCols.forEach(col => col.classList.add('hidden'));
+      actionCols.forEach(col => col.classList.add('hidden'));
+      showToast('Visualização adaptada', 'Ocultando dados de solicitante e botões de aprovação/entrega.');
+    } else {
+      viewToggleText.innerText = 'Modo: Solicitante';
+      solicitanteCols.forEach(col => col.classList.remove('hidden'));
+      actionCols.forEach(col => col.classList.remove('hidden'));
+      showToast('Visualização completa', 'Modo Administrador reativado com controle total de baixa.');
+    }
+  });
+
+  // Action RPC Handlers
+  function approveReq(btn) {
+    const row = btn.closest('tr');
+    row.setAttribute('data-status', 'aprovada');
+    const statusCell = row.cells[4];
+    statusCell.innerHTML = `
+      <span class="inline-flex items-center px-space-sm py-0.5 rounded-full text-label-sm font-label-sm font-semibold tracking-wide uppercase bg-[#E0F2FE] text-[#075985]">
+        Aprovada
+      </span>
+    `;
+    const actionCell = row.cells[5];
+    actionCell.innerHTML = `
+      <button onclick="deliverReq(this)" class="px-space-md py-1 rounded bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-on-secondary-container transition-all shadow-sm inline-flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-[16px]">local_shipping</span>
+        <span>Registrar entrega</span>
+      </button>
+    `;
+    showToast('Requisição Aprovada', 'Item liberado para retirada e registro atômico de entrega.');
+    applyFilters();
+  }
+
+  function rejectReq(btn) {
+    const row = btn.closest('tr');
+    row.setAttribute('data-status', 'recusada');
+    const statusCell = row.cells[4];
+    statusCell.innerHTML = `
+      <span class="inline-flex items-center px-space-sm py-0.5 rounded-full text-label-sm font-label-sm font-semibold tracking-wide uppercase bg-[#FEE2E2] text-[#991B1B]">
+        Recusada
+      </span>
+    `;
+    const actionCell = row.cells[5];
+    actionCell.innerHTML = `
+      <div class="inline-flex items-center gap-1 font-label-sm text-label-sm text-error bg-error-container/40 px-space-sm py-1 rounded">
+        <span class="material-symbols-outlined text-[14px]">cancel</span>
+        <span>Recusada em 24/10 por Juliana Prado</span>
+      </div>
+    `;
+    showToast('Requisição Recusada', 'Saldo devolvido e solicitante notificado do cancelamento.');
+    applyFilters();
+  }
+
+  function deliverReq(btn) {
+    const row = btn.closest('tr');
+    row.setAttribute('data-status', 'entregue');
+    const statusCell = row.cells[4];
+    statusCell.innerHTML = `
+      <span class="inline-flex items-center px-space-sm py-0.5 rounded-full text-label-sm font-label-sm font-semibold tracking-wide uppercase bg-[#DCFCE7] text-[#166534]">
+        Entregue
+      </span>
+    `;
+    const actionCell = row.cells[5];
+    actionCell.innerHTML = `
+      <div class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary bg-surface-container px-space-sm py-1 rounded">
+        <span class="material-symbols-outlined text-[14px]">task_alt</span>
+        <span>Entregue em 24/10 às 16:45 por Juliana Prado</span>
+      </div>
+    `;
+    showToast('RPC entregar_requisicao', 'Baixa atômica realizada no inventário com sucesso.');
+    applyFilters();
+  }
+
+  // Toast Functionality
+  function showToast(title, message) {
+    const toast = document.getElementById('toast-notification');
+    document.getElementById('toast-title').innerText = title;
+    document.getElementById('toast-msg').innerText = message;
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }, 3200);
+  }
+</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_8px_rgba(0,0,0,0.02)] mt-space-xl"><div class="w-full max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm"><div>© 2025 Gestão de Insumos MR. Todos os direitos reservados.</div><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-tertiary">Ambiente de Produção Interno</span><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span></div></div></footer></body></html>
